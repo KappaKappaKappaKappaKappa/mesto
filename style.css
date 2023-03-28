@@ -1,8 +1,10 @@
 .body{
     margin: auto;
+    font-family: 'Inter', sans-serif;
     background-color: #000000;
     min-width: 320px;
     max-width: 1280px;
+    color: white;
 }
 
 .header{
@@ -12,4 +14,74 @@
     max-width: 68.75%;
     min-height: 74px;
     border-bottom: 1px solid rgba(54, 54, 54, 0.7);
+}
+
+.content{}
+
+.profile{
+    margin: auto;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    max-width: 68.75%;
+}
+
+.profile__avatar{
+    border-radius: 50%;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+.profile-info{
+    position: relative;
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-info__name{
+    width: 294px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.625rem;
+    line-height: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-info__profession{
+    width: 336px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-info__edit-button{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/edit-button.svg);
+    border: 1px solid #FFFFFF;
+    background-color: #000000;
+}
+
+.profile__add-button{
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    background-image: url(./images/add-button.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #ffffff;
+    width: 150px;
 }
