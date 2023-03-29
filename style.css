@@ -20,24 +20,27 @@
 
 .profile{
     margin: auto;
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     max-width: 68.75%;
+    margin-bottom: 51px;
+    gap: 30px;
 }
 
 .profile__avatar{
     border-radius: 50%;
-    margin-right: 30px;
-    object-fit: cover;
 }
 
 .profile-info{
-    position: relative;
     margin-top: 22px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.profile-info__container{
+    display: flex;
+    gap: 18px;
 }
 
 .profile-info__name{
@@ -65,14 +68,13 @@
 .profile-info__edit-button{
     margin: 0;
     padding: 0;
-    position: absolute;
-    right: 0;
-    top: 15px;
     width: 24px;
     height: 24px;
     background-image: url(./images/edit-button.svg);
+    background-position: center;
     border: 1px solid #FFFFFF;
     background-color: #000000;
+    align-self: flex-end;
 }
 
 .profile__add-button{
@@ -84,4 +86,7 @@
     background-repeat: no-repeat;
     border: 2px solid #ffffff;
     width: 150px;
+    height: 50px;
+    align-self: center;
+    margin-left: auto;
 }
