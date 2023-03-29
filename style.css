@@ -75,6 +75,13 @@
     border: 1px solid #FFFFFF;
     background-color: #000000;
     align-self: center;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.profile-info__edit-button:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .profile__add-button {
@@ -89,6 +96,13 @@
     height: 50px;
     align-self: center;
     margin-left: auto;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.profile__add-button:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .cards {
@@ -138,6 +152,13 @@
     width: 22px;
     height: 19px;
     align-self: center;
+    opacity: 1;
+    transition: opasity 0.2s ease-in-out;
+}
+
+.card__like:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .footer{
