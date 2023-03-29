@@ -1,4 +1,4 @@
-.body{
+.body {
     margin: auto;
     font-family: 'Inter', sans-serif;
     background-color: #000000;
@@ -7,7 +7,7 @@
     color: white;
 }
 
-.header{
+.header {
     margin: auto;
     margin-top: 45px;
     margin-bottom: 36.25px;
@@ -16,9 +16,9 @@
     border-bottom: 1px solid rgba(54, 54, 54, 0.7);
 }
 
-.content{}
+.content {}
 
-.profile{
+.profile {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -27,23 +27,23 @@
     gap: 30px;
 }
 
-.profile__avatar{
+.profile__avatar {
     border-radius: 50%;
 }
 
-.profile-info{
+.profile-info {
     margin-top: 22px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.profile-info__container{
+.profile-info__container {
     display: flex;
     gap: 18px;
 }
 
-.profile-info__name{
+.profile-info__name {
     width: 294px;
     font-style: normal;
     font-weight: 500;
@@ -54,7 +54,7 @@
     text-overflow: ellipsis;
 }
 
-.profile-info__profession{
+.profile-info__profession {
     width: 336px;
     font-style: normal;
     font-weight: 400;
@@ -65,7 +65,7 @@
     text-overflow: ellipsis;
 }
 
-.profile-info__edit-button{
+.profile-info__edit-button {
     margin: 0;
     padding: 0;
     width: 24px;
@@ -74,10 +74,10 @@
     background-position: center;
     border: 1px solid #FFFFFF;
     background-color: #000000;
-    align-self: flex-end;
+    align-self: center;
 }
 
-.profile__add-button{
+.profile__add-button {
     margin: 0;
     padding: 0;
     background-color: #000000;
@@ -89,4 +89,53 @@
     height: 50px;
     align-self: center;
     margin-left: auto;
+}
+
+.cards {
+    max-width: 68.75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+    margin-bottom: 66px;
+}
+
+.card {
+    max-width: 32.04%;
+    min-height: 361px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.card__image {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: block;
+}
+
+.card__info {
+    max-width: 87.23%;
+    margin-left: 21px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__place {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000000;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1,8125rem;
+}
+
+.card__like {
+    width: 22px;
+    height: 19px;
+    align-self: center;
 }
