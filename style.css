@@ -46,6 +46,7 @@
 
 .profile-info__name {
     width: 294px;
+    height: 39px;
     font-style: normal;
     font-weight: 500;
     font-size: 2.625rem;
@@ -57,6 +58,7 @@
 
 .profile-info__profession {
     width: 336px;
+    max-height: 18px;
     font-style: normal;
     font-weight: 400;
     font-size: 1.125rem;
@@ -75,7 +77,7 @@
     background-position: center;
     border: 1px solid #FFFFFF;
     background-color: #000000;
-    align-self: center;
+    align-self: end;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
 }
@@ -109,14 +111,15 @@
 .cards {
     max-width: 68.75%;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 17px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    row-gap: 20px;
+    column-gap: 17px;
     margin-bottom: 67px;
 }
 
 .card {
-    max-width: 32.04%;
+    max-width: 100%;
     min-height: 361px;
     background-color: #fff;
     border-radius: 10px;
@@ -180,6 +183,7 @@
 .pop-up {
     position: relative;
     display: none;
+
 }
 
 .pop-up::before {
@@ -207,6 +211,7 @@
 
 .pop-up__form-title {
     max-width: 330px;
+    height: 23px;
     margin: 34px 0 54px 36px;
     font-style: normal;
     font-weight: 900;
@@ -217,7 +222,9 @@
 
 .pop-up__form-input-name {
     display: block;
-    width: 81.4%;
+    padding: 0;
+    padding-bottom: 13px;
+    width: 358px;
     height: 27px;
     margin: auto;
     margin-bottom: 30px;
@@ -232,11 +239,13 @@
 
 .pop-up__form-input-profession {
     display: block;
-    width: 81.4%;
-    height: 27px;
+    padding: 0;
+    padding-bottom: 13px;
     margin: auto;
     margin-bottom: 48px;
     border: none;
+    width: 358px;
+    height: 27px;
     border-bottom: 1px solid rgba(00, 00, 00, 0.2);
     box-sizing: border-box;
     font-style: normal;
