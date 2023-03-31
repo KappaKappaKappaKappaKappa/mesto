@@ -1,0 +1,16 @@
+.pop-up {
+    position: relative;
+    display: none;
+
+}
+
+.pop-up::before {
+    content: '';
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}

@@ -1,0 +1,12 @@
+.footer {
+    max-width: 69%;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+@media all and (min-width: 320px) and (max-width: 1024px){
+    .footer {
+        max-width: 88.13%;
+        margin-bottom: 36px;
+    }
+}

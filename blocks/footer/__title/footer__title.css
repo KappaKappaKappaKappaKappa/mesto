@@ -1,0 +1,15 @@
+.footer__title {
+    min-width: 36.14%;
+    color: #545454;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+}
+
+@media all and (min-width: 320px) and (max-width: 768px){
+    .footer__title {
+        font-size: 0.875rem;
+        line-height: 1.0625rem;
+    }
+}

@@ -1,0 +1,17 @@
+.cards {
+    max-width: 68.75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    row-gap: 20px;
+    column-gap: 17px;
+    margin-bottom: 67px;
+}
+
+@media all and (min-width: 320px) and (max-width: 1279px){
+    .cards {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
+        margin-bottom: 48px;
+    }
+}

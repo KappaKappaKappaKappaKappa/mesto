@@ -1,0 +1,17 @@
+.pop-up__form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 430px;
+    min-height: 330px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+@media all and (min-width: 320px) and (max-width: 768px){
+    .pop-up__form {
+        max-width: 88.13%;
+    }
+}

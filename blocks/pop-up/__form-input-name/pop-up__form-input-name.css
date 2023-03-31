@@ -1,0 +1,24 @@
+.pop-up__form-input-name {
+    display: block;
+    padding: 0;
+    padding-bottom: 13px;
+    width: 358px;
+    height: 27px;
+    margin: auto;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(00, 00, 00, 0.2);
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+}
+
+@media all and (min-width: 320px) and (max-width: 768px){
+    .pop-up__form-input-name {
+        max-width: 84.4%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
