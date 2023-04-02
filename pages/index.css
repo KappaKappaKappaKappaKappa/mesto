@@ -43,3 +43,4 @@
 @import url("../blocks/pop-up/__form-input-name/pop-up__form-input-name.css");
 @import url("../blocks/pop-up/__form-button-save/pop-up__form-button-save.css");
 @import url("../blocks/pop-up/__form-button-close/pop-up__form-button-close.css");
+@import url("../blocks/pop-up/_opened/pop-up_opened.css");
