@@ -1,6 +1,6 @@
 .profile-info__container {
     display: flex;
-    gap: 25px;
+    gap: 18px;
 }
 
 @media all and (min-width: 320px) and (max-width: 1024px){

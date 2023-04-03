@@ -7,16 +7,16 @@
 }
 
 @font-face {
-    font-weight: 400;
+    font-weight: 500;
     font-family: "Inter";
-    src: url(./fonts/Inter-Bold.otf) format("otf");
-    src: url(./fonts/Inter-Bold.woff) format("woff");
-    src: url(./fonts/Inter-Bold.woff2) format("woff2");
+    src: url(./fonts/Inter-Medium.otf) format("otf");
+    src: url(./fonts/Inter-Medium.woff) format("woff");
+    src: url(./fonts/Inter-Medium.woff2) format("woff2");
 }
 
 @font-face {
     font-family: "Inter";
-    font-weight: 500;
+    font-weight: 400;
     src: url(./fonts/Inter-Regular.otf) format("otf");
     src: url(./fonts/Inter-Regular.woff) format("woff");
     src: url(./fonts/Inter-Regular.woff2) format("woff2");
