@@ -10,6 +10,7 @@
     align-self: end;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
+    margin-bottom: 2px;
 }
 
 .profile-info__edit-button:hover {
