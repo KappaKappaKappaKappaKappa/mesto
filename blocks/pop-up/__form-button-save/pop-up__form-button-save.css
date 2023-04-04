@@ -1,14 +1,12 @@
 .pop-up__form-button-save {
     display: block;
     padding: 0;
-    margin: auto;
     margin-top: 48px;
-    margin-bottom: 37px;
     border: none;
     border-radius: 2px;
     background-color: #000;
     color: #fff;
-    width: 358px;
+    min-width: 358px;
     height: 50px;
     font-style: normal;
     font-weight: 400;
@@ -25,9 +23,8 @@
     .pop-up__form-button-save {
         height: 46px;
         margin-top: 45px;
-        max-width: 84.4%;
+        min-width: 238px;
         font-size: 0.875rem;
         line-height: 1.0625rem;
-        margin-bottom: 25px;
     }
 }

@@ -1,1 +1,12 @@
-.pop-up__container{}
+.pop-up__container{
+    min-width: 430px;
+    position: relative;
+    z-index: 1;
+}
+
+@media all and (min-width: 320px) and (max-width: 768px){
+    .pop-up__container{
+            min-width: 282px;
+    }
+
+}

@@ -3,7 +3,7 @@
     margin-top: 22px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 9px;
 }
 
 @media all and (min-width: 320px) and (max-width: 1024px){
