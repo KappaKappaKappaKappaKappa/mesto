@@ -1,9 +1,6 @@
-.cards__list{
+.cards__list {
     margin: 0;
     padding: 0;
-}
-
-.cards__list {
     max-width: 100%;
     margin: auto;
     display: grid;
