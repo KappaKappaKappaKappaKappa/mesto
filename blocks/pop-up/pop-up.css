@@ -6,7 +6,7 @@
     right: 0;
     display: none;
     justify-content: center;
-    padding: 195px 425px;
+    align-items: center;
 }
 
 .pop-up::before {
@@ -22,6 +22,5 @@
 
 @media all and (min-width: 320px) and (max-width: 768px){
     .pop-up{
-        padding: 123px 19px;
     }
 }
