@@ -11,6 +11,8 @@ let saveButton = document.querySelector('.pop-up__form-button-save')
 
 let popUpForm = document.querySelector('.pop-up__form')
 
+let likeBtn = document.querySelectorAll('.card__like')
+
 function openPopUp() {
     popUpName.value = profileName.textContent;
     popUpProfession.value = profileProfession.textContent;
@@ -33,3 +35,10 @@ function savePopUp(event) {
 }
 
 popUpForm.addEventListener('submit', savePopUp)
+
+
+likeBtn.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('card__like_active');
+    });
+  });
