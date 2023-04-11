@@ -50,3 +50,5 @@
 
 @import url("../blocks/pop-up/__add-cards/pop-up__add-cards.css");
 @import url("../blocks/pop-up/__add-cards/_opened/pop-up__add-cards_opened.css");
+@import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_input_link.css");
+@import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_input_place.css");
