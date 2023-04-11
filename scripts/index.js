@@ -33,3 +33,48 @@ function savePopUp(event) {
 }
 
 popUpForm.addEventListener('submit', savePopUp)
+
+
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+const cardsList = document.querySelector('.cards__list');
+
+initialCards.forEach((card) => {
+  const cardTemplate = `<li class="cards__list-card">
+                          <article class="card">
+                            <img class="card__image" src="${card.link}" alt="${card.name}">
+                            <div class="card__info">
+                              <h2 class="card__place">${card.name}</h2>
+                              <button class="card__like" type="button"></button>
+                            </div>
+                          </article>
+                        </li>`;
+  cardsList.insertAdjacentHTML('beforeend', cardTemplate);
+});
+
+
