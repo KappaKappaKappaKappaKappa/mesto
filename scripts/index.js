@@ -40,11 +40,11 @@ const addCardsBtn = document.querySelector('.profile__add-button');
 const popUpAddCards = document.querySelector('.pop-up__add-cards');
 const closeBtnPopUpAddCards = popUpAddCards.querySelector('.pop-up__form-button-close')
 
-function openCardsAddPopup(){
+function openCardsAddPopup() {
     popUpAddCards.classList.add('pop-up__add-cards_opened');
 }
 
-function closeCardsAddPopup(){
+function closeCardsAddPopup() {
     popUpAddCards.classList.remove('pop-up__add-cards_opened');
 }
 
@@ -53,7 +53,32 @@ addCardsBtn.addEventListener('click', openCardsAddPopup);
 closeBtnPopUpAddCards.addEventListener('click', closeCardsAddPopup);
 
 
+const popUpCardsForm = popUpAddCards.querySelector('.pop-up__form')
 
+const inputName = document.querySelector('.pop-up__form-input_input_place');
+const inputLink = document.querySelector('.pop-up__form-input_input_link');
+
+function addCard(event) {
+    event.preventDefault();
+    const name = inputName.value;
+    const link = inputLink.value;
+    initialCards.unshift({ name: name, link: link });
+    const cardTemplate = `<li class="cards__list-card">
+    <article class="card">
+      <img class="card__image" src="${link}" alt="${name}">
+      <div class="card__info">
+        <h2 class="card__place">${name}</h2>
+        <button class="card__like" type="button"></button>
+      </div>
+    </article>
+  </li>`;
+    cardsList.insertAdjacentHTML('afterbegin', cardTemplate);
+    closeCardsAddPopup();
+    inputName.value = '';
+    inputLink.value = '';
+}
+
+popUpCardsForm.addEventListener('submit', addCard)
 
 
 
@@ -86,7 +111,7 @@ const initialCards = [
 const cardsList = document.querySelector('.cards__list');
 
 initialCards.forEach((card) => {
-  const cardTemplate = `<li class="cards__list-card">
+    const cardTemplate = `<li class="cards__list-card">
                           <article class="card">
                             <img class="card__image" src="${card.link}" alt="${card.name}">
                             <div class="card__info">
@@ -95,7 +120,7 @@ initialCards.forEach((card) => {
                             </div>
                           </article>
                         </li>`;
-  cardsList.insertAdjacentHTML('beforeend', cardTemplate);
+    cardsList.insertAdjacentHTML('beforeend', cardTemplate);
 });
 
 
