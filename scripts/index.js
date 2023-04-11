@@ -34,6 +34,25 @@ function savePopUp(event) {
 
 popUpForm.addEventListener('submit', savePopUp)
 
+const addCardsBtn = document.querySelector('.profile__add-button');
+const popUpAddCards = document.querySelector('.pop-up__add-cards');
+const closeBtnPopUpAddCards = popUpAddCards.querySelector('.pop-up__form-button-close')
+
+function openCardsAddPopup(){
+    popUpAddCards.classList.add('pop-up__add-cards_opened');
+}
+
+function closeCardsAddPopup(){
+    popUpAddCards.classList.remove('pop-up__add-cards_opened');
+}
+
+addCardsBtn.addEventListener('click', openCardsAddPopup);
+
+closeBtnPopUpAddCards.addEventListener('click', closeCardsAddPopup);
+
+
+
+
 
 
 const initialCards = [
