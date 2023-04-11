@@ -11,8 +11,6 @@ let saveButton = document.querySelector('.pop-up__form-button-save')
 
 let popUpForm = document.querySelector('.pop-up__form')
 
-let likeBtn = document.querySelectorAll('.card__like')
-
 function openPopUp() {
     popUpName.value = profileName.textContent;
     popUpProfession.value = profileProfession.textContent;
@@ -123,10 +121,10 @@ initialCards.forEach((card) => {
     cardsList.insertAdjacentHTML('beforeend', cardTemplate);
 });
 
+let likeBtn = document.querySelectorAll('.card__like')
 
-
-// likeBtn.forEach(function(btn) {
-//     btn.addEventListener('click', function() {
-//       btn.classList.toggle('card__like_active');
-//     });
-//   });
+likeBtn.forEach(function(like) {
+    like.addEventListener('click', function(){
+        like.classList.toggle('card__like_active');
+    });
+});
