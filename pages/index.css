@@ -33,6 +33,8 @@
 @import url("../blocks/card/__like/_active/card__like_active.css");
 @import url("../blocks/card/__place/card__place.css");
 
+@import url("../blocks/card/__trash/card__trash.css");
+
 /* FOOTER */
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__title/footer__title.css");

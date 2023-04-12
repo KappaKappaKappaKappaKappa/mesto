@@ -63,6 +63,7 @@ function addCard(event) {
     initialCards.unshift({ name: name, link: link });
     const cardTemplate = `<li class="cards__list-card">
     <article class="card">
+    <button class="card__trash" type="button"></button>
       <img class="card__image" src="${link}" alt="${name}">
       <div class="card__info">
         <h2 class="card__place">${name}</h2>
@@ -111,6 +112,7 @@ const cardsList = document.querySelector('.cards__list');
 initialCards.forEach((card) => {
     const cardTemplate = `<li class="cards__list-card">
                           <article class="card">
+                          <button class="card__trash" type="button"></button>
                             <img class="card__image" src="${card.link}" alt="${card.name}">
                             <div class="card__info">
                               <h2 class="card__place">${card.name}</h2>
@@ -128,3 +130,12 @@ likeBtn.forEach(function(like) {
         like.classList.toggle('card__like_active');
     });
 });
+
+
+const delBtn = document.querySelectorAll('.card__trash');
+delBtn.forEach(button => {
+    button.addEventListener('click', function(event){
+        const card = event.target.closest('.cards__list-card');
+        card.remove();
+    })
+})
