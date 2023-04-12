@@ -139,3 +139,24 @@ delBtn.forEach(button => {
         card.remove();
     })
 })
+
+const cardImgs = document.querySelectorAll('.card__image');
+const cardPopup = document.querySelector('.pop-up-card');
+const cardPopupCloseBtn = document.querySelector('.pop-up-card__button-close');
+const cardName = document.querySelector('.pop-up-card__name');
+
+const cards = document.querySelectorAll('.card');
+
+cardImgs.forEach((image) => {
+    image.addEventListener('click', () => {
+        const imageSrc = image.getAttribute('src');
+        cardPopup.querySelector('.pop-up-card__image').setAttribute('src', imageSrc);
+        cardPopup.classList.add('pop-up-card_opened');
+    });
+});
+
+cardPopupCloseBtn.addEventListener('click', () => {
+    cardPopup.classList.remove('pop-up-card_opened')
+});
+
+

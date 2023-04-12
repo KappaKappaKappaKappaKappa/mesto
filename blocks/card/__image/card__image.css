@@ -6,3 +6,7 @@
     display: block;
     object-fit: cover;
 }
+
+.card__image:hover{
+    cursor: pointer;
+}
