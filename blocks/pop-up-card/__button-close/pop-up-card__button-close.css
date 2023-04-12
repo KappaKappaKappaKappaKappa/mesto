@@ -1,0 +1,15 @@
+.pop-up-card__button-close{
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../images/pop-up-close.svg');
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+}
+
+.pop-up-card__button-close:hover{
+    opacity: 0.6;
+}
