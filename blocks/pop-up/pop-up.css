@@ -4,9 +4,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility, opacity 0.5s linear;
 }
 
 .pop-up::before {

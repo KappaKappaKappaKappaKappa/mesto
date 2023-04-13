@@ -1,10 +1,24 @@
 .pop-up-card__container{
-    min-width: 816px;
-    max-height: 562px;
+    width: 816px;
+    height: 562px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 1;
     gap: 10px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px){
+    .pop-up-card__container{
+        max-width: 433px;
+        max-height: 562px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 499px){
+    .pop-up-card__container{
+        max-width: 240px;
+        max-height: 321px;
+    }
 }
