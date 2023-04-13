@@ -1,4 +1,4 @@
-.pop-up__add-cards {
+.pop-up-add-cards {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.pop-up__add-cards::before {
+.pop-up-add-cards::before {
     content: '';
     background: #000;
     position: fixed;
@@ -24,6 +24,6 @@
 }
 
 @media all and (min-width: 320px) and (max-width: 768px){
-    .pop-up__add-cards{
+    .pop-up-add-cards{
     }
 }
