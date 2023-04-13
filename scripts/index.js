@@ -140,23 +140,29 @@ delBtn.forEach(button => {
     })
 })
 
-const cardImgs = document.querySelectorAll('.card__image');
 const cardPopup = document.querySelector('.pop-up-card');
 const cardPopupCloseBtn = document.querySelector('.pop-up-card__button-close');
-const cardName = document.querySelector('.pop-up-card__name');
+const popupName = document.querySelector('.pop-up-card__name');
+const popupImg = document.querySelector('.pop-up-card__image')
 
 const cards = document.querySelectorAll('.card');
 
-cardImgs.forEach((image) => {
-    image.addEventListener('click', () => {
-        const imageSrc = image.getAttribute('src');
-        cardPopup.querySelector('.pop-up-card__image').setAttribute('src', imageSrc);
+cards.forEach(card => {
+    const image = card.querySelector('.card__image');
+    const title = card.querySelector('.card__place');
+    image.addEventListener('click', () =>{
+        popupImg.alt = title.textContent;
+        popupImg.src = image.src;
+        popupName.textContent = title.textContent;
         cardPopup.classList.add('pop-up-card_opened');
-    });
-});
+    })
+})
 
 cardPopupCloseBtn.addEventListener('click', () => {
     cardPopup.classList.remove('pop-up-card_opened')
+    popupImg.alt = '';
+    popupImg.src = '';
+    popupName.textContent = '';
 });
 
 
