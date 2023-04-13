@@ -32,66 +32,6 @@
 
         <section class="cards">
             <ul class="cards__list">
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/karachevsk.jpg" alt="Заброшеный дом в горах">
-                        <div class="card__info">
-                            <h2 class="card__place">Карачаевск</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/elbrus.jpg" alt="Гора вдали">
-                        <div class="card__info">
-                            <h2 class="card__place">Гора Эльбрус</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/dombay.jpg" alt="Гора среди леса">
-                        <div class="card__info">
-                            <h2 class="card__place">Домбай</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/elbrus.jpg" alt="Гора вдали">
-                        <div class="card__info">
-                            <h2 class="card__place">Гора Эльбрус</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/dombay.jpg" alt="Гора среди леса">
-                        <div class="card__info">
-                            <h2 class="card__place">Домбай</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
-                <li class="cards__list-card">
-                    <article class="card">
-                        <button class="card__trash" type="button"></button>
-                        <img class="card__image" src="./images/karachevsk.jpg" alt="Заброшеный дом в горах">
-                        <div class="card__info">
-                            <h2 class="card__place">Карачаево-Черкесия</h2>
-                            <button class="card__like" type="button"></button>
-                        </div>
-                    </article>
-                </li>
             </ul>
         </section>
     </main>
@@ -100,38 +40,42 @@
         <div class="pop-up__container">
             <form class="pop-up__form" name="pop-up__form">
                 <h2 class="pop-up__form-title">Редактировать профиль</h2>
-                <input class="pop-up__form-input pop-up__form-input_input_name" name="pop-up__form-input_input_name" type="text">
-                <input class="pop-up__form-input pop-up__form-input_input_profession" name="pop-up__form-input_input_profession" type="text">
+                <input class="pop-up__form-input pop-up__form-input_input_name" name="pop-up__form-input_input_name"
+                    type="text">
+                <input class="pop-up__form-input pop-up__form-input_input_profession"
+                    name="pop-up__form-input_input_profession" type="text">
                 <button class="pop-up__form-button-save" type="submit">Сохранить</button>
-                <button class="pop-up__form-button-close" type="button"></button>
             </form>
+            <button class="pop-up__button-close" type="button">
         </div>
     </section>
 
-    <section class="pop-up pop-up-add-cards">
+    <section class="pop-up pop-up_show_add-cards">
         <div class="pop-up__container">
             <form class="pop-up__form" name="pop-up__form">
                 <h2 class="pop-up__form-title">Новое место</h2>
-                <input class="pop-up__form-input pop-up__form-input_input_place" name="pop-up__form-input_input_place" type="text" placeholder="Название">
-                <input class="pop-up__form-input pop-up__form-input_input_link" name="pop-up__form-input_input_link" type="text" placeholder="Ссылка на картинку">
+                <input class="pop-up__form-input pop-up__form-input_input_place" name="pop-up__form-input_input_place"
+                    type="text" placeholder="Название">
+                <input class="pop-up__form-input pop-up__form-input_input_link" name="pop-up__form-input_input_link"
+                    type="text" placeholder="Ссылка на картинку">
                 <button class="pop-up__form-button-save" type="submit">Создать</button>
-                <button class="pop-up__form-button-close" type="button"></button>
             </form>
+            <button class="pop-up__button-close" type="button"></button>
         </div>
     </section>
 
-    <section class="pop-up-card">
-        <div class="pop-up-card__container">
-            <img src="#" alt="#" class="pop-up-card__image">
-            <h2 class="pop-up-card__name">Горный алтай</h2>
-            <button class="pop-up-card__button-close" type="button"></button>
+    <section class="pop-up pop-up_show_zoom-card">
+        <div class="pop-up__container pop-up__container_open_image">
+            <img src="#" alt="#" class="pop-up__image">
+            <h2 class="pop-up__card-name">Горный алтай</h2>
+            <button class="pop-up__button-close" type="button"></button>
         </div>
     </section>
 
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
-    
+
     <script src="./scripts/index.js"></script>
 </body>
 

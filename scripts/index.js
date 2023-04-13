@@ -1,6 +1,6 @@
-let popUp = document.querySelector('.pop-up')
+const popUp = document.querySelector('.pop-up')
 let editButton = document.querySelector('.profile-info__edit-button')
-let closeButton = document.querySelector('.pop-up__form-button-close')
+let closeButton = document.querySelector('.pop-up__button-close')
 
 let popUpName = document.querySelector('.pop-up__form-input_input_name')
 let popUpProfession = document.querySelector('.pop-up__form-input_input_profession')
@@ -35,15 +35,15 @@ function savePopUp(event) {
 popUpForm.addEventListener('submit', savePopUp)
 
 const addCardsBtn = document.querySelector('.profile__add-button');
-const popUpAddCards = document.querySelector('.pop-up-add-cards');
-const closeBtnPopUpAddCards = popUpAddCards.querySelector('.pop-up__form-button-close')
+const popUpAddCards = document.querySelector('.pop-up_show_add-cards');
+const closeBtnPopUpAddCards = popUpAddCards.querySelector('.pop-up__button-close')
 
 function openCardsAddPopup() {
-    popUpAddCards.classList.add('pop-up-add-cards_opened');
+    popUpAddCards.classList.add('pop-up_opened');
 }
 
 function closeCardsAddPopup() {
-    popUpAddCards.classList.remove('pop-up-add-cards_opened');
+    popUpAddCards.classList.remove('pop-up_opened');
 }
 
 addCardsBtn.addEventListener('click', openCardsAddPopup);
@@ -125,8 +125,8 @@ initialCards.forEach((card) => {
 
 let likeBtn = document.querySelectorAll('.card__like')
 
-likeBtn.forEach(function(like) {
-    like.addEventListener('click', function(){
+likeBtn.forEach(function (like) {
+    like.addEventListener('click', function () {
         like.classList.toggle('card__like_active');
     });
 });
@@ -134,32 +134,32 @@ likeBtn.forEach(function(like) {
 
 const delBtn = document.querySelectorAll('.card__trash');
 delBtn.forEach(button => {
-    button.addEventListener('click', function(event){
+    button.addEventListener('click', function (event) {
         const card = event.target.closest('.cards__list-card');
         card.remove();
     })
 })
 
-const cardPopup = document.querySelector('.pop-up-card');
-const cardPopupCloseBtn = document.querySelector('.pop-up-card__button-close');
-const popupName = document.querySelector('.pop-up-card__name');
-const popupImg = document.querySelector('.pop-up-card__image')
+const cardPopup = document.querySelector('.pop-up_show_zoom-card');
+const cardPopupCloseBtn = cardPopup.querySelector('.pop-up__button-close');
+const popupName = document.querySelector('.pop-up__card-name');
+const popupImg = document.querySelector('.pop-up__image')
 
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
     const image = card.querySelector('.card__image');
     const title = card.querySelector('.card__place');
-    image.addEventListener('click', () =>{
+    image.addEventListener('click', () => {
         popupImg.alt = title.textContent;
         popupImg.src = image.src;
         popupName.textContent = title.textContent;
-        cardPopup.classList.add('pop-up-card_opened');
+        cardPopup.classList.add('pop-up_opened');
     })
 })
 
 cardPopupCloseBtn.addEventListener('click', () => {
-    cardPopup.classList.remove('pop-up-card_opened')
+    cardPopup.classList.remove('pop-up_opened')
     popupImg.alt = '';
     popupImg.src = '';
     popupName.textContent = '';

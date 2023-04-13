@@ -48,17 +48,14 @@
 @import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_name.css");
 @import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_profession.css");
 @import url("../blocks/pop-up/__form-button-save/pop-up__form-button-save.css");
-@import url("../blocks/pop-up/__form-button-close/pop-up__form-button-close.css");
+@import url("../blocks/pop-up/__button-close/pop-up__button-close.css");
 @import url("../blocks/pop-up/_opened/pop-up_opened.css");
 
-@import url("../blocks/pop-up-add-cards/pop-up-add-cards.css");
-@import url("../blocks/pop-up-add-cards/_opened/pop-up-add-cards_opened.css");
+@import url("../blocks/pop-up/_show/pop-up_show_add-cards.css");
 @import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_input_link.css");
 @import url("../blocks/pop-up/__form-input/_input/pop-up__form-input_input_place.css");
 
-@import url("../blocks/pop-up-card/pop-up-card.css");
-@import url("../blocks/pop-up-card/__image/pop-up-card__image.css");
-@import url("../blocks/pop-up-card/__name/pop-up-card__name.css");
-@import url("../blocks/pop-up-card/__container/pop-up-card__container.css");
-@import url("../blocks/pop-up-card/__button-close/pop-up-card__button-close.css");
-@import url("../blocks/pop-up-card/_opened/pop-up-card_opened.css");
+@import url("../blocks/pop-up/_show/pop-up_show_zoom-card.css");
+@import url("../blocks/pop-up/__container/_open/pop-up__container_open_image.css");
+@import url("../blocks/pop-up/__image/pop-up__image.css");
+@import url("../blocks/pop-up/__card-name/pop-up__card-name.css");

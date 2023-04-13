@@ -1,4 +1,4 @@
-.pop-up__form-button-close {
+.pop-up__button-close {
     width: 32px;
     height: 32px;
     background-image: url('../../../images/pop-up-close.svg');
@@ -10,12 +10,12 @@
     cursor: pointer;
 }
 
-.pop-up__form-button-close:hover {
+.pop-up__button-close:hover {
     opacity: 0.6;
 }
 
 @media all and (min-width: 320px) and (max-width: 768px){
-    .pop-up__form-button-close {
+    .pop-up__button-close {
         background-image: url('../../../images/pop-up-close-320.svg');
         width: 20px;
         height: 20px;
