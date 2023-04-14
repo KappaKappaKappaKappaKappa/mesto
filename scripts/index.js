@@ -1,65 +1,62 @@
-const popUp = document.querySelector('.pop-up')
-let editButton = document.querySelector('.profile-info__edit-button')
-let closeButton = document.querySelector('.pop-up__button-close')
+const popUpEditProfile = document.querySelector('.pop-up_show_edit-profile')
+const popUpEditProfileCloseButton = popUpEditProfile.querySelector('.pop-up__button-close')
+const popUpEditProfileInputName = popUpEditProfile.querySelector('.pop-up__form-input_input_name')
+const popUpEditProfileInputProfession = popUpEditProfile.querySelector('.pop-up__form-input_input_profession')
+const popUpEditProfileForm = popUpEditProfile.querySelector('.pop-up__form')
 
-let popUpName = document.querySelector('.pop-up__form-input_input_name')
-let popUpProfession = document.querySelector('.pop-up__form-input_input_profession')
-let profileName = document.querySelector('.profile-info__name')
-let profileProfession = document.querySelector('.profile-info__profession')
+const editButton = document.querySelector('.profile-info__edit-button')
+const profileName = document.querySelector('.profile-info__name')
+const profileProfession = document.querySelector('.profile-info__profession')
 
-let saveButton = document.querySelector('.pop-up__form-button-save')
-
-let popUpForm = document.querySelector('.pop-up__form')
-
-function openPopUp() {
-    popUpName.value = profileName.textContent;
-    popUpProfession.value = profileProfession.textContent;
-    popUp.classList.add('pop-up_opened')
+function addProfileNameAndProfessionPopUpEditProfile(){
+    popUpEditProfileInputName.value = profileName.textContent;
+    popUpEditProfileInputProfession.value = profileProfession.textContent;
 }
-
-editButton.addEventListener('click', openPopUp)
-
-function closePopUp() {
-    popUp.classList.remove('pop-up_opened')
+function openPopUpEditProfile() {
+    popUpEditProfile.classList.add('pop-up_opened');
+    addProfileNameAndProfessionPopUpEditProfile();
 }
-
-closeButton.addEventListener('click', closePopUp)
-
-function savePopUp(event) {
+editButton.addEventListener('click', openPopUpEditProfile)
+function closePopUpEditProfile() {
+    popUpEditProfile.classList.remove('pop-up_opened')
+}
+popUpEditProfileCloseButton.addEventListener('click', closePopUpEditProfile)
+function savePopUpEditProfile(event) {
     event.preventDefault();
-    profileName.textContent = popUpName.value;
-    profileProfession.textContent = popUpProfession.value;
-    closePopUp()
+    profileName.textContent = popUpEditProfileInputName.value;
+    profileProfession.textContent = popUpEditProfileInputProfession.value;
+    closePopUpEditProfile()
 }
+popUpEditProfileForm.addEventListener('submit', savePopUpEditProfile)
 
-popUpForm.addEventListener('submit', savePopUp)
 
-const addCardsBtn = document.querySelector('.profile__add-button');
+
+
 const popUpAddCards = document.querySelector('.pop-up_show_add-cards');
-const closeBtnPopUpAddCards = popUpAddCards.querySelector('.pop-up__button-close')
+const popUpAddCardsCloseBtn = popUpAddCards.querySelector('.pop-up__button-close')
+const addCardsBtn = document.querySelector('.profile__add-button');
 
-function openCardsAddPopup() {
+function openPopUpAddCards() {
     popUpAddCards.classList.add('pop-up_opened');
 }
 
-function closeCardsAddPopup() {
+function closePopUpAddCards() {
     popUpAddCards.classList.remove('pop-up_opened');
 }
 
-addCardsBtn.addEventListener('click', openCardsAddPopup);
+addCardsBtn.addEventListener('click', openPopUpAddCards);
+popUpAddCardsCloseBtn.addEventListener('click', closePopUpAddCards);
 
-closeBtnPopUpAddCards.addEventListener('click', closeCardsAddPopup);
 
+const popUpAddCardsForm = popUpAddCards.querySelector('.pop-up__form')
 
-const popUpCardsForm = popUpAddCards.querySelector('.pop-up__form')
-
-const inputName = document.querySelector('.pop-up__form-input_input_place');
-const inputLink = document.querySelector('.pop-up__form-input_input_link');
+const popUpAddCardsInputPlace = popUpAddCards.querySelector('.pop-up__form-input_input_place');
+const popUpAddCardsInputLink = popUpAddCards.querySelector('.pop-up__form-input_input_link');
 
 function addCard(event) {
     event.preventDefault();
-    const name = inputName.value;
-    const link = inputLink.value;
+    const name = popUpAddCardsInputPlace.value;
+    const link = popUpAddCardsInputLink.value;
     initialCards.unshift({ name: name, link: link });
     const cardTemplate = `<li class="cards__list-card">
     <article class="card">
@@ -72,12 +69,12 @@ function addCard(event) {
     </article>
   </li>`;
     cardsList.insertAdjacentHTML('afterbegin', cardTemplate);
-    closeCardsAddPopup();
-    inputName.value = '';
-    inputLink.value = '';
+    closePopUpAddCards();
+    popUpAddCardsInputPlace.value = '';
+    popUpAddCardsInputLink.value = '';
 }
 
-popUpCardsForm.addEventListener('submit', addCard)
+popUpAddCardsForm.addEventListener('submit', addCard)
 
 
 
@@ -123,7 +120,7 @@ initialCards.forEach((card) => {
     cardsList.insertAdjacentHTML('beforeend', cardTemplate);
 });
 
-let likeBtn = document.querySelectorAll('.card__like')
+const likeBtn = document.querySelectorAll('.card__like')
 
 likeBtn.forEach(function (like) {
     like.addEventListener('click', function () {

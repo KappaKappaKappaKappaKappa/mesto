@@ -41,6 +41,7 @@
 
 /* POP-UP */
 @import url("../blocks/pop-up/pop-up.css");
+@import url("../blocks/pop-up/_show/pop-up_show_edit-profile.css");
 @import url("../blocks/pop-up/__container/pop-up__container.css");
 @import url("../blocks/pop-up/__form/pop-up__form.css");
 @import url("../blocks/pop-up/__form-title/pop-up__form-title.css");
