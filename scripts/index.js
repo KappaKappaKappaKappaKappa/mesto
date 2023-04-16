@@ -8,7 +8,7 @@ const editButton = document.querySelector('.profile-info__edit-button')
 const profileName = document.querySelector('.profile-info__name')
 const profileProfession = document.querySelector('.profile-info__profession')
 
-function addProfileNameAndProfessionPopUpEditProfile(){
+function addProfileNameAndProfessionPopUpEditProfile() {
     popUpEditProfileInputName.value = profileName.textContent;
     popUpEditProfileInputProfession.value = profileProfession.textContent;
 }
@@ -53,22 +53,17 @@ const popUpAddCardsForm = popUpAddCards.querySelector('.pop-up__form')
 const popUpAddCardsInputPlace = popUpAddCards.querySelector('.pop-up__form-input_input_place');
 const popUpAddCardsInputLink = popUpAddCards.querySelector('.pop-up__form-input_input_link');
 
+const cardTemplate = document.querySelector('.card-template').content;
 function addCard(event) {
     event.preventDefault();
     const name = popUpAddCardsInputPlace.value;
     const link = popUpAddCardsInputLink.value;
     initialCards.unshift({ name: name, link: link });
-    const cardTemplate = `<li class="cards__list-card">
-    <article class="card">
-    <button class="card__trash" type="button"></button>
-      <img class="card__image" src="${link}" alt="${name}">
-      <div class="card__info">
-        <h2 class="card__place">${name}</h2>
-        <button class="card__like" type="button"></button>
-      </div>
-    </article>
-  </li>`;
-    cardsList.insertAdjacentHTML('afterbegin', cardTemplate);
+    const cardElement = cardTemplate.querySelector('.cards__list-card').cloneNode(true);
+    cardElement.querySelector('.card__image').src = `${link}`;
+    cardElement.querySelector('.card__image').alt = `${name}`;
+    cardElement.querySelector('.card__place').textContent = `${name}`;
+    cardsList.prepend(cardElement);
     closePopUpAddCards();
     popUpAddCardsInputPlace.value = '';
     popUpAddCardsInputLink.value = '';
@@ -107,22 +102,16 @@ const initialCards = [
 const cardsList = document.querySelector('.cards__list');
 
 initialCards.forEach((card) => {
-    const cardTemplate = `<li class="cards__list-card">
-                          <article class="card">
-                          <button class="card__trash" type="button"></button>
-                            <img class="card__image" src="${card.link}" alt="${card.name}">
-                            <div class="card__info">
-                              <h2 class="card__place">${card.name}</h2>
-                              <button class="card__like" type="button"></button>
-                            </div>
-                          </article>
-                        </li>`;
-    cardsList.insertAdjacentHTML('beforeend', cardTemplate);
+    const cardElement = cardTemplate.querySelector('.cards__list-card').cloneNode(true);
+    cardElement.querySelector('.card__image').src = `${card.link}`;
+    cardElement.querySelector('.card__image').alt = `${card.name}`;
+    cardElement.querySelector('.card__place').textContent = `${card.name}`;
+    cardsList.append(cardElement);
 });
 
-const likeBtn = document.querySelectorAll('.card__like')
+const likeBtns = document.querySelectorAll('.card__like')
 
-likeBtn.forEach(function (like) {
+likeBtns.forEach(function (like) {
     like.addEventListener('click', function () {
         like.classList.toggle('card__like_active');
     });
