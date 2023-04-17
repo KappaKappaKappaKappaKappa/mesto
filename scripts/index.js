@@ -30,8 +30,6 @@ function savePopUpEditProfile(event) {
 popUpEditProfileForm.addEventListener('submit', savePopUpEditProfile)
 
 
-
-
 const popUpAddCards = document.querySelector('.pop-up_show_add-cards');
 const popUpAddCardsCloseBtn = popUpAddCards.querySelector('.pop-up__button-close')
 const addCardsBtn = document.querySelector('.profile__add-button');
@@ -65,6 +63,16 @@ function addCard(event) {
     cardElement.querySelector('.card__place').textContent = `${name}`;
     cardsList.prepend(cardElement);
     closePopUpAddCards();
+    const newCard = cardsList.firstChild;
+    const newLikeBtn = newCard.querySelector('.card__like');
+    const newDelBtn = newCard.querySelector('.card__trash');
+    newLikeBtn.addEventListener('click', function () {
+        newLikeBtn.classList.toggle('card__like_active');
+    });
+    newDelBtn.addEventListener('click', function (event) {
+        const newDelBtn = event.target.closest('.cards__list-card');
+        newDelBtn.remove();
+    })
     popUpAddCardsInputPlace.value = '';
     popUpAddCardsInputLink.value = '';
 }
@@ -99,6 +107,7 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
 const cardsList = document.querySelector('.cards__list');
 
 initialCards.forEach((card) => {
@@ -110,26 +119,24 @@ initialCards.forEach((card) => {
 });
 
 const likeBtns = document.querySelectorAll('.card__like')
-
-likeBtns.forEach(function (like) {
+likeBtns.forEach(function cardLike(like) {
     like.addEventListener('click', function () {
         like.classList.toggle('card__like_active');
     });
 });
 
-
 const delBtn = document.querySelectorAll('.card__trash');
-delBtn.forEach(button => {
+delBtn.forEach(function cardDel(button) {
     button.addEventListener('click', function (event) {
         const card = event.target.closest('.cards__list-card');
         card.remove();
     })
 })
 
-const cardPopup = document.querySelector('.pop-up_show_zoom-card');
-const cardPopupCloseBtn = cardPopup.querySelector('.pop-up__button-close');
-const popupName = document.querySelector('.pop-up__card-name');
-const popupImg = document.querySelector('.pop-up__image')
+const zoomCardPopup = document.querySelector('.pop-up_show_zoom-card');
+const zoomCardPopupCloseBtn = zoomCardPopup.querySelector('.pop-up__button-close');
+const zoomCardPopupName = zoomCardPopup.querySelector('.pop-up__card-name');
+const zoomCardPopupImg = zoomCardPopup.querySelector('.pop-up__image')
 
 const cards = document.querySelectorAll('.card');
 
@@ -137,18 +144,18 @@ cards.forEach(card => {
     const image = card.querySelector('.card__image');
     const title = card.querySelector('.card__place');
     image.addEventListener('click', () => {
-        popupImg.alt = title.textContent;
-        popupImg.src = image.src;
-        popupName.textContent = title.textContent;
-        cardPopup.classList.add('pop-up_opened');
+        zoomCardPopupImg.alt = title.textContent;
+        zoomCardPopupImg.src = image.src;
+        zoomCardPopupName.textContent = title.textContent;
+        zoomCardPopup.classList.add('pop-up_opened');
     })
 })
 
-cardPopupCloseBtn.addEventListener('click', () => {
-    cardPopup.classList.remove('pop-up_opened')
-    popupImg.alt = '';
-    popupImg.src = '';
-    popupName.textContent = '';
+zoomCardPopupCloseBtn.addEventListener('click', () => {
+    zoomCardPopup.classList.remove('pop-up_opened')
+    zoomCardPopupImg.alt = '';
+    zoomCardPopupImg.src = '';
+    zoomCardPopupName.textContent = '';
 });
 
 
