@@ -133,7 +133,7 @@ const createCardElement = (card) => {
 //ЗАГРУЗКА ВСЕХ КАРТОЧЕК ИЗ МАССИВА ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
 initialCards.forEach((cardInfo) => {
     const element = createCardElement(cardInfo);
-    cardsContainer.prepend(element);
+    cardsContainer.append(element);
 });
 // CREATE CARDS
 
