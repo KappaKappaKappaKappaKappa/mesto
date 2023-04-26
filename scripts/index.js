@@ -155,25 +155,62 @@ zoomCardPopupCloseBtn.addEventListener('click', () => {
 const formElement = document.querySelector('.pop-up__form');
 const formInput = formElement.querySelector('.pop-up__form-input');
 const formError = formElement.querySelector(`.pop-up__form-${formInput.id}-error`);
-const popUpEditSaveButton = formElement.querySelector('.pop-up__form-button-save')
+const popUpEditSaveButton = formElement.querySelector('.pop-up__form-button-save');
 
-function showFormInputError(element){
-    element.classList.add('pop-up__form-input_type_error');
-    formError.classList.add('pop-up__form-input-error_active');
-    popUpEditSaveButton.classList.toggle('pop')
+function enableValidation(){
+    const formList = Array.from(document.querySelectorAll('.pop-up__form'));
+    formList.forEach((formElement) => {
+        setEventListeners(formElement);
+    });
+};
+
+function setEventListeners(formElement){
+    const inputList = Array.from(formElement.querySelectorAll('.pop-up__form-input'));
+    inputList.forEach((inputElement) => {
+        inputElement.addEventListener('input', () => {
+            checkValid(formElement, inputElement);
+            toggleButtonState(inputList, popUpEditSaveButton);
+        });
+    });
+};
+
+function showFormInputError(formElement, inputElement, errorMessage){
+    const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
+    inputElement.classList.add('pop-up__form-input_type_error');
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add('pop-up__form-input-error_active');
 }
 
-function hideFormInputError(element){
-    element.classList.remove('pop-up__form-input_type_error');
-    formError.classList.remove('pop-up__form-input-error_active');
+function hideFormInputError(formElement, inputElement){
+    const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
+    inputElement.classList.remove('pop-up__form-input_type_error');
+    errorElement.classList.remove('pop-up__form-input-error_active');
+    errorElement.textContent = '';
 }
 
-function checkValid(){
-    if(!formInput.validity.valid){
-        showFormInputError(formInput);
+function checkValid(formElement, inputElement){
+    if(!inputElement.validity.valid){
+        showFormInputError(formElement, inputElement, inputElement.validationMessage);
     }else{
-        hideFormInputError(formInput)
+        hideFormInputError(formElement, inputElement)
     }
 }
 
-formInput.addEventListener('input', checkValid);
+function hasInvalidInput(inputList){
+return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+})
+}
+
+function toggleButtonState(inputList, buttonElement){
+    if(hasInvalidInput(inputList)){
+        buttonElement.classList.add('pop-up__form-button-save_inactive');
+        buttonElement.disabled = true;
+    }else{
+        buttonElement.classList.remove('pop-up__form-button-save_inactive');
+        buttonElement.disabled = false;
+    }
+}
+
+
+enableValidation();
