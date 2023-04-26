@@ -151,3 +151,29 @@ zoomCardPopupCloseBtn.addEventListener('click', () => {
 //переделал полностью код, выглядит намного лучше
 
 
+
+const formElement = document.querySelector('.pop-up__form');
+const formInput = formElement.querySelector('.pop-up__form-input');
+const formError = formElement.querySelector(`.pop-up__form-${formInput.id}-error`);
+const popUpEditSaveButton = formElement.querySelector('.pop-up__form-button-save')
+
+function showFormInputError(element){
+    element.classList.add('pop-up__form-input_type_error');
+    formError.classList.add('pop-up__form-input-error_active');
+    popUpEditSaveButton.classList.toggle('pop')
+}
+
+function hideFormInputError(element){
+    element.classList.remove('pop-up__form-input_type_error');
+    formError.classList.remove('pop-up__form-input-error_active');
+}
+
+function checkValid(){
+    if(!formInput.validity.valid){
+        showFormInputError(formInput);
+    }else{
+        hideFormInputError(formInput)
+    }
+}
+
+formInput.addEventListener('input', checkValid);

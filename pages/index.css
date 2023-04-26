@@ -56,3 +56,7 @@
 @import url("../blocks/pop-up/__container/_open/pop-up__container_open_image.css");
 @import url("../blocks/pop-up/__image/pop-up__image.css");
 @import url("../blocks/pop-up/__card-name/pop-up__card-name.css");
+
+@import url("../blocks/pop-up/__form-input/_type/pop-up__form-input_type_error.css");
+@import url("../blocks/pop-up/__form-input-error/pop-up__form-input-error.css");
+@import url("../blocks/pop-up/__form-input-error/_active/pop-up__form-input-error_active.css");

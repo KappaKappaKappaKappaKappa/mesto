@@ -38,12 +38,15 @@
 
     <section class="pop-up pop-up_show_edit-profile">
         <div class="pop-up__container">
-            <form class="pop-up__form" name="pop-up__form">
+            <form class="pop-up__form" name="pop-up__form" novalidate>
                 <h2 class="pop-up__form-title">Редактировать профиль</h2>
-                <input class="pop-up__form-input pop-up__form-input_input_name" name="pop-up__form-input_input_name"
-                    type="text">
+                <input class="pop-up__form-input pop-up__form-input_input_name" id='name-input'
+                    name="pop-up__form-input_input_name" type="text" required minlength="2" maxlength="40">
+                <span class="pop-up__form-input-error pop-up__form-name-input-error">Необходимо заполнить данное
+                    поле</span>
                 <input class="pop-up__form-input pop-up__form-input_input_profession"
-                    name="pop-up__form-input_input_profession" type="text">
+                    name="pop-up__form-input_input_profession" type="text" required minlength="2" maxlength="200">
+
                 <button class="pop-up__form-button-save" type="submit">Сохранить</button>
             </form>
             <button class="pop-up__button-close" type="button"></button>
@@ -70,18 +73,18 @@
             <h2 class="pop-up__card-name">Горный алтай</h2>
             <button class="pop-up__button-close" type="button"></button>
         </div>
-        
+
         <template class="card-template">
             <li class="cards__list-card">
                 <article class="card">
-                <button class="card__trash" type="button"></button>
-                  <img class="card__image" src="#" alt="#">
-                  <div class="card__info">
-                    <h2 class="card__place"></h2>
-                    <button class="card__like" type="button"></button>
-                  </div>
+                    <button class="card__trash" type="button"></button>
+                    <img class="card__image" src="#" alt="#">
+                    <div class="card__info">
+                        <h2 class="card__place"></h2>
+                        <button class="card__like" type="button"></button>
+                    </div>
                 </article>
-              </li>
+            </li>
         </template>
     </section>
 
