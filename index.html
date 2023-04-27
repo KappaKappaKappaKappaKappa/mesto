@@ -52,14 +52,16 @@
         </div>
     </section>
 
-    <section class="pop-up pop-up_show_add-cards">
+    <section class="pop-up pop-up_show_add-cards" novalidate>
         <div class="pop-up__container">
             <form class="pop-up__form" name="pop-up__form">
                 <h2 class="pop-up__form-title">Новое место</h2>
-                <input class="pop-up__form-input pop-up__form-input_input_place" name="pop-up__form-input_input_place"
-                    type="text" placeholder="Название">
-                <input class="pop-up__form-input pop-up__form-input_input_link" name="pop-up__form-input_input_link"
-                    type="text" placeholder="Ссылка на картинку">
+                <input class="pop-up__form-input pop-up__form-input_input_place" id="place-input" name="pop-up__form-input_input_place"
+                    type="text" placeholder="Название" required minlength="2" maxlength="30">
+                    <span class="pop-up__form-input-error pop-up__form-place-input-error"></span>
+                <input class="pop-up__form-input pop-up__form-input_input_link" id="link-input" name="pop-up__form-input_input_link"
+                    type="url" placeholder="Ссылка на картинку" required>
+                    <span class="pop-up__form-input-error pop-up__form-link-input-error"></span>
                 <button class="pop-up__form-button-save" type="submit">Создать</button>
             </form>
             <button class="pop-up__button-close" type="button"></button>

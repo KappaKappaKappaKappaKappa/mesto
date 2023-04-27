@@ -215,61 +215,61 @@ zoomCardPopupCloseBtn.addEventListener('click', () => {
 
 // enableValidation();
 
-function showInputError(formElement, inputElement, errorMessage) {
-    const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-    inputElement.classList.add('pop-up__form-input_type_error');
-    errorElement.classList.add('pop-up__form-input-error_active');
-    errorElement.textContent = errorMessage;
-}
+// function showInputError(formElement, inputElement, errorMessage) {
+//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
+//     inputElement.classList.add('pop-up__form-input_type_error');
+//     errorElement.classList.add('pop-up__form-input-error_active');
+//     errorElement.textContent = errorMessage;
+// }
 
-function hideInputError(formElement, inputElement) {
-    const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-    inputElement.classList.remove('pop-up__form-input_type_error');
-    errorElement.classList.remove('pop-up__form-input-error_active');
-    errorElement.textContent = '';
-}
+// function hideInputError(formElement, inputElement) {
+//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
+//     inputElement.classList.remove('pop-up__form-input_type_error');
+//     errorElement.classList.remove('pop-up__form-input-error_active');
+//     errorElement.textContent = '';
+// }
 
-function checkValid(formElement, inputElement) {
-    if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
-    } else {
-        hideInputError(formElement, inputElement);
-    }
-}
+// function checkValid(formElement, inputElement) {
+//     if (!inputElement.validity.valid) {
+//         showInputError(formElement, inputElement, inputElement.validationMessage);
+//     } else {
+//         hideInputError(formElement, inputElement);
+//     }
+// }
 
-function setEventListeners(formElement) {
-    const inputList = Array.from(formElement.querySelectorAll('.pop-up__form-input'));
-    const buttonElement = formElement.querySelector('.pop-up__form-button-save');
-    inputList.forEach((inputElement) => {
-        inputElement.addEventListener('input', () => {
-            checkValid(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement);
-        });
-    });
-}
+// function setEventListeners(formElement) {
+//     const inputList = Array.from(formElement.querySelectorAll('.pop-up__form-input'));
+//     const buttonElement = formElement.querySelector('.pop-up__form-button-save');
+//     inputList.forEach((inputElement) => {
+//         inputElement.addEventListener('input', () => {
+//             checkValid(formElement, inputElement);
+//             toggleButtonState(inputList, buttonElement);
+//         });
+//     });
+// }
 
-function hasInvalidInput(inputList) {
-    return inputList.some((inputElement) => {
-        return !inputElement.validity.valid;
-    });
-}
+// function hasInvalidInput(inputList) {
+//     return inputList.some((inputElement) => {
+//         return !inputElement.validity.valid;
+//     });
+// }
 
-function toggleButtonState(inputList, buttonElement) {
-    if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add('pop-up__form-button-save_inactive');
-    } else {
-        buttonElement.classList.remove('pop-up__form-button-save_inactive');
-    }
-}
+// function toggleButtonState(inputList, buttonElement) {
+//     if (hasInvalidInput(inputList)) {
+//         buttonElement.classList.add('pop-up__form-button-save_inactive');
+//     } else {
+//         buttonElement.classList.remove('pop-up__form-button-save_inactive');
+//     }
+// }
 
-const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.pop-up__form'));
-    formList.forEach((formElement) => {
-        setEventListeners(formElement);
-    });
-};
+// const enableValidation = () => {
+//     const formList = Array.from(document.querySelectorAll('.pop-up__form'));
+//     formList.forEach((formElement) => {
+//         setEventListeners(formElement);
+//     });
+// };
 
-enableValidation();
+// enableValidation();
 
 // function enableValidation({
 //     formSelector: '.pop-up__form',
@@ -281,3 +281,26 @@ enableValidation();
 //   }){
 
 //   }
+
+const formEl = document.querySelector('.pop-up__form');
+const inputEl = formEl.querySelector('.pop-up__form-input');
+const errorEl = formEl.querySelector(`.pop-up__form-${inputEl.id}-error`);
+const allInputEl = formEl.querySelectorAll('.pop-up__form-input');
+
+
+function checkValid(inputEl){
+    if(!inputEl.validity.valid){
+        showInputError(inputEl);
+    }
+}
+
+function showInputError(inputEl, errorEl){
+        inputEl.classList.add('pop-up__form-input_type_error');
+        errorEl.classList.add('pop-up__form-input-error_active');
+    }
+
+function hideInputError(inputEl, errorEl){
+    inputEl.classList.remove('pop-up__form-input_type_error');
+        errorEl.classList.remove('pop-up__form-input-error_active');
+}
+// 1.поставить на каждый инпут стушатель
