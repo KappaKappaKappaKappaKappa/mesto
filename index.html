@@ -52,9 +52,9 @@
         </div>
     </section>
 
-    <section class="pop-up pop-up_show_add-cards" novalidate>
+    <section class="pop-up pop-up_show_add-cards">
         <div class="pop-up__container">
-            <form class="pop-up__form" name="pop-up__form">
+            <form class="pop-up__form" name="pop-up__form" novalidate>
                 <h2 class="pop-up__form-title">Новое место</h2>
                 <input class="pop-up__form-input pop-up__form-input_input_place" id="place-input" name="pop-up__form-input_input_place"
                     type="text" placeholder="Название" required minlength="2" maxlength="30">
@@ -92,7 +92,7 @@
     <footer class="footer">
         <p class="footer__title">© 2020 Mesto Russia</p>
     </footer>
-
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
