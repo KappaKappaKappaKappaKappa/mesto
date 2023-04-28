@@ -148,159 +148,80 @@ zoomCardPopupCloseBtn.addEventListener('click', () => {
 });
 // CARD ZOOM POPUP
 
-//переделал полностью код, выглядит намного лучше
+// ВАЛИДАЦИЯ ФОРМ
+const settings = {
+    formSelector: '.pop-up__form',
+    inputSelector: '.pop-up__form-input',
+    buttonSelector: '.popup__form-button-save',
+    inactiveButtonClass: 'pop-up__form-button-save_inactive',
+    inputErrorClass: 'pop-up__form-input_type_error',
+    errorClass: 'pop-up__form-input-error_active'
+  }
 
-
-
-// const formElement = document.querySelector('.pop-up__form');
-// const formInput = formElement.querySelector('.pop-up__form-input');
-// const formError = formElement.querySelector(`.pop-up__form-${formInput.id}-error`);
-// const popUpEditSaveButton = formElement.querySelector('.pop-up__form-button-save');
-
-// function enableValidation(){
-//     const formList = Array.from(document.querySelectorAll('.pop-up__form'));
-//     formList.forEach((formElement) => {
-//         setEventListeners(formElement);
-//     });
-// };
-
-// function setEventListeners(formElement){
-//     const inputList = Array.from(formElement.querySelectorAll('.pop-up__form-input'));
-//     inputList.forEach((inputElement) => {
-//         inputElement.addEventListener('input', () => {
-//             checkValid(formElement, inputElement);
-//             toggleButtonState(inputList, popUpEditSaveButton);
-//         });
-//     });
-// };
-
-// function showFormInputError(formElement, inputElement, errorMessage){
-//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-//     inputElement.classList.add('pop-up__form-input_type_error');
-//     errorElement.textContent = errorMessage;
-//     errorElement.classList.add('pop-up__form-input-error_active');
-// }
-
-// function hideFormInputError(formElement, inputElement){
-//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-//     inputElement.classList.remove('pop-up__form-input_type_error');
-//     errorElement.classList.remove('pop-up__form-input-error_active');
-//     errorElement.textContent = '';
-// }
-
-// function checkValid(formElement, inputElement){
-//     if(!inputElement.validity.valid){
-//         showFormInputError(formElement, inputElement, inputElement.validationMessage);
-//     }else{
-//         hideFormInputError(formElement, inputElement)
-//     }
-// }
-
-// function hasInvalidInput(inputList){
-// return inputList.some((inputElement) => {
-//     return !inputElement.validity.valid;
-// })
-// }
-
-// function toggleButtonState(inputList, buttonElement){
-//     if(hasInvalidInput(inputList)){
-//         buttonElement.classList.add('pop-up__form-button-save_inactive');
-//         buttonElement.disabled = true;
-//     }else{
-//         buttonElement.classList.remove('pop-up__form-button-save_inactive');
-//         buttonElement.disabled = false;
-//     }
-// }
-
-
-// enableValidation();
-
-// function showInputError(formElement, inputElement, errorMessage) {
-//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-//     inputElement.classList.add('pop-up__form-input_type_error');
-//     errorElement.classList.add('pop-up__form-input-error_active');
-//     errorElement.textContent = errorMessage;
-// }
-
-// function hideInputError(formElement, inputElement) {
-//     const errorElement = formElement.querySelector(`.pop-up__form-${inputElement.id}-error`);
-//     inputElement.classList.remove('pop-up__form-input_type_error');
-//     errorElement.classList.remove('pop-up__form-input-error_active');
-//     errorElement.textContent = '';
-// }
-
-// function checkValid(formElement, inputElement) {
-//     if (!inputElement.validity.valid) {
-//         showInputError(formElement, inputElement, inputElement.validationMessage);
-//     } else {
-//         hideInputError(formElement, inputElement);
-//     }
-// }
-
-// function setEventListeners(formElement) {
-//     const inputList = Array.from(formElement.querySelectorAll('.pop-up__form-input'));
-//     const buttonElement = formElement.querySelector('.pop-up__form-button-save');
-//     inputList.forEach((inputElement) => {
-//         inputElement.addEventListener('input', () => {
-//             checkValid(formElement, inputElement);
-//             toggleButtonState(inputList, buttonElement);
-//         });
-//     });
-// }
-
-// function hasInvalidInput(inputList) {
-//     return inputList.some((inputElement) => {
-//         return !inputElement.validity.valid;
-//     });
-// }
-
-// function toggleButtonState(inputList, buttonElement) {
-//     if (hasInvalidInput(inputList)) {
-//         buttonElement.classList.add('pop-up__form-button-save_inactive');
-//     } else {
-//         buttonElement.classList.remove('pop-up__form-button-save_inactive');
-//     }
-// }
-
-// const enableValidation = () => {
-//     const formList = Array.from(document.querySelectorAll('.pop-up__form'));
-//     formList.forEach((formElement) => {
-//         setEventListeners(formElement);
-//     });
-// };
-
-// enableValidation();
-
-// function enableValidation({
-//     formSelector: '.pop-up__form',
-//     inputSelector: '.pop-up__form-input',
-//     submitButtonSelector: '.popup__button',
-//     inactiveButtonClass: 'popup__button_disabled',
-//     inputErrorClass: 'popup__input_type_error',
-//     errorClass: 'popup__error_visible'
-//   }){
-
-//   }
-
-const formEl = document.querySelector('.pop-up__form');
-const inputEl = formEl.querySelector('.pop-up__form-input');
-const errorEl = formEl.querySelector(`.pop-up__form-${inputEl.id}-error`);
-const allInputEl = formEl.querySelectorAll('.pop-up__form-input');
-
-
-function checkValid(inputEl){
+function checkValid(formEl, inputEl, settings){
     if(!inputEl.validity.valid){
-        showInputError(inputEl);
+        showInputError(formEl, inputEl, inputEl.validationMessage, settings);
+    }else{
+        hideInputError(formEl, inputEl, settings);
     }
 }
 
-function showInputError(inputEl, errorEl){
-        inputEl.classList.add('pop-up__form-input_type_error');
-        errorEl.classList.add('pop-up__form-input-error_active');
-    }
-
-function hideInputError(inputEl, errorEl){
-    inputEl.classList.remove('pop-up__form-input_type_error');
-        errorEl.classList.remove('pop-up__form-input-error_active');
+function showInputError (formEl, inputEl, errorMessage, settings){
+    const errorEl = formEl.querySelector(`.pop-up__form-${inputEl.id}-error`);
+    inputEl.classList.add(settings.inputErrorClass);
+    errorEl.classList.add(settings.errorClass);
+    errorEl.textContent = errorMessage;
 }
-// 1.поставить на каждый инпут стушатель
+
+function hideInputError(formEl, inputEl, settings){
+    const errorEl = formEl.querySelector(`.pop-up__form-${inputEl.id}-error`);
+    inputEl.classList.remove(settings.inputErrorClass);
+    errorEl.classList.remove(settings.errorClass);
+    errorEl.textContent = '';
+}
+
+function setEventListeners(formEl, settings){
+    const inputList = Array.from(formEl.querySelectorAll(settings.inputSelector));
+    const buttonEl = formEl.querySelector(settings.buttonSelector);
+
+    inactiveBtnSave(inputList, buttonEl, settings);
+    inputList.forEach((inputEl) => {
+        inputEl.addEventListener('input', function(){
+            checkValid(formEl, inputEl, settings);
+            inactiveBtnSave(inputList, buttonEl, settings);
+        });
+    });
+}
+
+  function enableValidation(settings){
+    const formList = Array.from(document.querySelectorAll(settings.formSelector));
+
+    formList.forEach((formEl) =>{
+        formEl.addEventListener('submit', (evt)=>{
+            evt.preventDefault();
+        });
+        setEventListeners(formEl, settings);
+    });
+}
+
+
+function hasInvalidInput(inputList){
+   return inputList.some((inputEl) =>{
+        if(!inputEl.validity.valid){
+            return true;
+        }else{
+            return false;
+        }
+    })
+}
+
+function inactiveBtnSave(inputList, buttonEl, settings){
+    if(hasInvalidInput(inputList)){
+        buttonEl.classList.add(settings.inactiveButtonClass);
+    }else{
+        buttonEl.classList.remove(settings.inactiveButtonClass);
+    }
+}
+
+enableValidation(settings);
+// ВАЛИДАЦИЯ ФОРМ
