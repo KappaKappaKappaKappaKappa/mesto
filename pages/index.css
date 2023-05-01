@@ -59,6 +59,5 @@
 
 @import url("../blocks/pop-up/__form-input/_type/pop-up__form-input_type_error.css");
 @import url("../blocks/pop-up/__form-input-error/pop-up__form-input-error.css");
-@import url("../blocks/pop-up/__form-input-error/_active/pop-up__form-input-error_active.css");
 
 @import url("../blocks/pop-up/__form-button-save/_inactive/pop-up__form-button-save_inactive.css");

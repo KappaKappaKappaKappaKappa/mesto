@@ -23,6 +23,7 @@ editButton.addEventListener('click', () => {
     openPopUp(popUpEditProfile);
     popUpEditProfileInputName.value = profileName.textContent;
     popUpEditProfileInputProfession.value = profileProfession.textContent;
+
 });
 
 popUpEditProfileCloseButton.addEventListener('click', () => {
@@ -61,6 +62,7 @@ addCardsBtn.addEventListener('click', () => {
     openPopUp(popUpAddCards);
     popUpAddCardsInputPlace.value = '';
     popUpAddCardsInputLink.value = '';
+
 });
 
 popUpAddCardsCloseBtn.addEventListener('click', () => {
@@ -126,7 +128,6 @@ const createCardElement = (card) => {
         zoomCardPopupImg.src = cardImage.src;
         zoomCardPopupName.textContent = cardPlace.textContent;
     });
-
     return cardElement;
 }
 
@@ -151,8 +152,8 @@ zoomCardPopupCloseBtn.addEventListener('click', () => {
 // // ЗАКРЫТИЕ POPUP КНОПКОЙ ESC
 const allPopUp = Array.from(document.querySelectorAll('.pop-up'));
 allPopUp.forEach((popup) => {
-    window.addEventListener('keydown', function(evt){
-        if(evt.keyCode === 27){
+    window.addEventListener('keydown', function (evt) {
+        if (evt.keyCode === 27) {
             closePopUp(popup);
         }
     });
@@ -161,9 +162,11 @@ allPopUp.forEach((popup) => {
 // ЗАКРЫТИЕ POPUP КЛИКОМ НА ОВЕРЛЕЙ
 allPopUp.forEach((popup) => {
     const popUpContainer = popup.querySelector('.pop-up__container');
-    popup.addEventListener('click', function(evt) {
-      if (!popUpContainer.contains(evt.target)) {
-        closePopUp(popup);
-      }
+    popup.addEventListener('click', function (evt) {
+        if (!popUpContainer.contains(evt.target)) {
+            closePopUp(popup);
+        }
     });
-  });
+});
+
+

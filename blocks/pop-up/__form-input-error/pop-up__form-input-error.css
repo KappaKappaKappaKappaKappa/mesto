@@ -3,5 +3,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 0.9375rem;
-    display: none;
+    min-height: 30px;
+    max-width: 358px;
+    display: block;
 }
