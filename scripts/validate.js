@@ -7,13 +7,6 @@ const settings = {
     inputErrorClass: 'pop-up__form-input_type_error'
 }
 
-function clearInputError(formEl, settings){
-    const inputList = Array.from(formEl.querySelectorAll(settings.inputSelector));
-    inputList.forEach((inputEl)=>{
-        hideInputError(formEl, inputEl, settings);
-    })
-}
-
 function checkValid(formEl, inputEl, settings) {
     if (!inputEl.validity.valid) {
         showInputError(formEl, inputEl, inputEl.validationMessage, settings);
