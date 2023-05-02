@@ -47,12 +47,21 @@ function enableValidation(settings) {
         formEl.addEventListener('submit', (evt) => {
             evt.preventDefault();
             const buttonEl = formEl.querySelector(settings.buttonSelector);
-            buttonEl.classList.add(settings.inactiveButtonClass);
+            getDisableBtnSave(buttonEl);
         });
         setEventListeners(formEl, settings);
     });
 }
 
+function getDisableBtnSave(buttonEl){
+    buttonEl.classList.add(settings.inactiveButtonClass);
+    buttonEl.setAttribute('disabled', '');
+}
+
+function removeDisableBtnSave(buttonEl){
+    buttonEl.classList.remove(settings.inactiveButtonClass);
+    buttonEl.removeAttribute('disabled');
+}
 
 function hasInvalidInput(inputList) {
     return inputList.some((inputEl) => {
@@ -66,9 +75,9 @@ function hasInvalidInput(inputList) {
 
 function inactiveBtnSave(inputList, buttonEl, settings) {
     if (hasInvalidInput(inputList)) {
-        buttonEl.classList.add(settings.inactiveButtonClass);
+        getDisableBtnSave(buttonEl);
     } else {
-        buttonEl.classList.remove(settings.inactiveButtonClass);
+        removeDisableBtnSave(buttonEl);
     }
 }
 

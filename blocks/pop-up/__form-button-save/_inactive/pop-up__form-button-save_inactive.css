@@ -4,7 +4,6 @@
     opacity: 0.2;
     border: 1px solid;
     cursor: default;
-    pointer-events: none;
 }
 .pop-up__form-button-save_inactive:hover{
     opacity: 0.2;
