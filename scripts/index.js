@@ -54,10 +54,20 @@ const initialCards = [
     }
 ];
 
+function clearInputErrors(popUpElement){
+    const inputList = Array.from(popUpElement.querySelectorAll('.pop-up__form-input'));
+    inputList.forEach((inputEl) => {
+        const errorEl = popUpElement.querySelector(`.pop-up__form-${inputEl.id}-error`);
+        inputEl.classList.remove('pop-up__form-input_type_error');
+        errorEl.textContent = '';
+    })
+}
+
 //ФУНКЦИЯ ОТКРЫТИЯ ДЛЯ ВСЕХ ПОП АПОВ
 function openPopUp(popUpElement) {
     popUpElement.classList.add('pop-up_opened');
     document.addEventListener('keydown', closeEcsPopup);
+    clearInputErrors(popUpElement);
 };
 
 //ФУНКЦИЯ ЗАКРЫТИЯ ДЛЯ ВСЕХ ПОП АПОВ
@@ -170,5 +180,6 @@ allPopUp.forEach((popup) => {
         }
     });
 });
+
 
 
