@@ -70,10 +70,14 @@ const addCard = (evt) => {
     const link = popUpAddCardsInputLink.value;
     const newCard = { name: name, link: link };
     initialCards.push(newCard);
-    const cardInstance = new Card(newCard, cardTemplate, handleOpenImage);
-    const cardElement = cardInstance.createCardElement(newCard);
+    const cardElement = createCardInstance(newCard);
     cardsContainer.prepend(cardElement);
     closePopUp(popUpAddCards);
+}
+
+function createCardInstance(cardData){
+    const cardInstance = new Card(cardData, cardTemplate, handleOpenImage);
+    return cardInstance.createCardElement();
 }
 
 editButton.addEventListener('click', () => {
@@ -120,8 +124,7 @@ allPopUp.forEach((popup) => {
 
 //ЗАГРУЗКА ВСЕХ КАРТОЧЕК ИЗ МАССИВА ПРИ ЗАГРУЗКЕ СТРАНИЦЫ
 initialCards.forEach((cardInfo) => {
-    const cardInstance = new Card(cardInfo, cardTemplate, handleOpenImage);
-    const element = cardInstance.createCardElement(cardInfo);
+    const element = createCardInstance(cardInfo);
     cardsContainer.append(element);
 });
 
