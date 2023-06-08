@@ -13,8 +13,8 @@ export class Card {
         this._cardLikeBtn = this._cardElement.querySelector('.card__like');
 
         this._cardImage.src = this._cardData.link;
-        this._cardImage.alt = this._cardData.name;
-        this._cardPlace.textContent = this._cardData.name;
+        this._cardImage.alt = this._cardData.title;
+        this._cardPlace.textContent = this._cardData.title;
         this._setEventListeners();
         return this._cardElement;
     }
@@ -31,7 +31,7 @@ export class Card {
         this._cardDelBtn.addEventListener('click', this._cardDelete.bind(this));
         this._cardLikeBtn.addEventListener('click', this._cardLike.bind(this));
         this._cardImage.addEventListener('click', () => {
-            this._handleOpenImage(this._cardData.name, this._cardData.link)
+            this._handleOpenImage(this._cardData)
         })
     }
 }
