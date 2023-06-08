@@ -1,5 +1,5 @@
-import { Card } from './components/Card.js';
-import { FormValidator } from './components/FormValidation.js';
+import { Card } from '../scripts/components/Card.js';
+import { FormValidator } from '../scripts/components/FormValidation.js';
 import {     settings,
     editButton,
     addCardsBtn,
@@ -10,13 +10,13 @@ import {     settings,
     userInfoConfig,
     cardTemplate,
     popUpEditProfileForm,
-    popUpAddCardsForm } from './utils/constans.js';
-import Popup from './components/Popup.js';
-import PopupWithImage from './components/PopupWithImage.js';
-import Section from './components/Section.js';
-import UserInfo from './components/UserInfo.js';
-import PopupWithForm from './components/PopupWithForm.js';
-import { initialCards } from './utils/initial-сards.js';
+    popUpAddCardsForm } from '../scripts/utils/constans.js';
+import Popup from '../scripts/components/Popup.js';
+import PopupWithImage from '../scripts/components/PopupWithImage.js';
+import Section from '../scripts/components/Section.js';
+import UserInfo from '../scripts/components/UserInfo.js';
+import PopupWithForm from '../scripts/components/PopupWithForm.js';
+import { initialCards } from '../scripts/utils/initial-сards.js';
 import '../pages/index.css';
 
 //Создание класса UserInfo
@@ -27,18 +27,14 @@ const popupImage = new PopupWithImage(popupZoomImageSelector);
 popupImage.setEventListeners();
 
 //Создание класса PopupWithForm для попапа изменения данных профиля
-const popupEditProfile = new PopupWithForm(editProfilePopupSelector, (evt) => {
-    evt.preventDefault();
-    userInfo.setUserInfo(popupEditProfile.getInputValues()); 
-    popupEditProfile.close();
+const popupEditProfile = new PopupWithForm(editProfilePopupSelector, (inputValues) => {
+    userInfo.setUserInfo(inputValues);
 })
 popupEditProfile.setEventListeners();
 
 //Создание класса PopupWithForm для попапа добавления новых карточек
-const addCardPopup = new PopupWithForm(addCardPopupSelector, (evt) => {
-    evt.preventDefault();
-    section.addItem(section.renderer(addCardPopup.getInputValues()));
-    addCardPopup.close();
+const addCardPopup = new PopupWithForm(addCardPopupSelector, (inputValues) => {
+    section.addItem(section.renderer(inputValues));
 })
 addCardPopup.setEventListeners();
 
