@@ -68,8 +68,7 @@ export class FormValidator {
     }
 
     enableValidation() {
-        this._formEl.addEventListener('reset', (evt) => {
-            evt.preventDefault();
+        this._formEl.addEventListener('reset', () => {
             this._disableBtnSave();
         });
         this._setEventListeners();

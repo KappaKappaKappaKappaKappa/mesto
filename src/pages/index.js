@@ -27,7 +27,7 @@ const popupImage = new PopupWithImage(popupZoomImageSelector);
 popupImage.setEventListeners();
 
 //Создание класса PopupWithForm для попапа изменения данных профиля
-const popupEditProfile = new PopupWithForm(editProfilePopupSelector, (inputValues) => {
+const popupEditProfile = new PopupWithForm(editProfilePopupSelector, inputValues => {
     userInfo.setUserInfo(inputValues);
 })
 popupEditProfile.setEventListeners();

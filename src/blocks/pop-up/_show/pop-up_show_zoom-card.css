@@ -1,3 +1,7 @@
 .pop-up_show_zoom-card{
-    
+
+}
+
+.pop-up_show_zoom-card::before{
+    opacity: 0.9;
 }
