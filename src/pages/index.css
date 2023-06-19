@@ -35,6 +35,9 @@
 
 @import url("../blocks/card/__trash/card__trash.css");
 
+@import url('../blocks/card/__like-numbers/card__like-numbers.css');
+@import url('../blocks/card/__like-container/card__like-container.css');
+
 /* FOOTER */
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/footer/__title/footer__title.css");
@@ -61,3 +64,5 @@
 @import url("../blocks/pop-up/__form-input-error/pop-up__form-input-error.css");
 
 @import url("../blocks/pop-up/__form-button-save/_inactive/pop-up__form-button-save_inactive.css");
+
+@import url("../blocks/pop-up/_show/pop-up_show_delete-submit.css");

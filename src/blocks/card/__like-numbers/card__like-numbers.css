@@ -1,0 +1,8 @@
+.card__like-numbers{
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 0.98rem;
+}

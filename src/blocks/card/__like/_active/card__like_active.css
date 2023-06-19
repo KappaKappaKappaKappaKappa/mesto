@@ -3,7 +3,6 @@
     background-image: url("../../../../images/like-active.svg");
     width: 22px;
     height: 19px;
-    margin-right: 4px;
     align-self: center;
     opacity: 1;
     transition: opasity 0.2s ease-in-out;
