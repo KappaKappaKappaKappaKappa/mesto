@@ -16,11 +16,19 @@ const cardTemplate = document.querySelector('.card-template');
 const popUpEditProfile = document.querySelector('.pop-up_show_edit-profile');
 const popUpEditProfileForm = popUpEditProfile.querySelector('.pop-up__form');
 const popUpAddCards = document.querySelector('.pop-up_show_add-cards');
-const popUpAddCardsForm = popUpAddCards.querySelector('.pop-up__form')
+const popUpAddCardsForm = popUpAddCards.querySelector('.pop-up__form');
 const userInfoConfig = {
     profileNameSelector: '.profile-info__name',
     profileProfessionSelector: '.profile-info__profession'
 };
+const popupConfirm = document.querySelector('.pop-up_show_delete-submit');
+const popupConfirmForm = popupConfirm.querySelector('.pop-up__form');
+const popupEditAvatar = document.querySelector('.pop-up_show_new-avatar-form');
+const popupEditAvatarForm = popupEditAvatar.querySelector('.pop-up__form');
+const popupAvatarSelector = '.pop-up_show_new-avatar-form';
+const profileAvatar = document.querySelector('.profile__avatar');
+const profileAvatarBtn = document.querySelector('.profile__avatar-btn');
+const popupDeleteSelector = '.pop-up_show_delete-submit';
 
 export {
     settings,
@@ -35,5 +43,11 @@ export {
     popUpEditProfile,
     popUpEditProfileForm,
     popUpAddCards,
-    popUpAddCardsForm
+    popUpAddCardsForm,
+    popupConfirmForm,
+    popupEditAvatarForm,
+    popupAvatarSelector,
+    profileAvatar,
+    profileAvatarBtn,
+    popupDeleteSelector
 }

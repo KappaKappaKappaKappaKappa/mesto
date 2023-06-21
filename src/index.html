@@ -77,11 +77,11 @@
         </div>
     </section>
 
-    <section class="pop-up pop-up_show_delete-submit pop-up_opened">
+    <section class="pop-up pop-up_show_delete-submit">
         <div class="pop-up__container pop-up__container_open_submit">
-            <h2 class="pop-up__title">Вы уверенны?</h2>
-            <button class="pop-up__button-close" type="button"></button>
             <form class="pop-up__form" name="deleteCard" novalidate>
+            <h2 class="pop-up__form-title pop-up__form-title-confirm">Вы уверены?</h2>
+            <button class="pop-up__button-close" type="button"></button>
                 <button class="pop-up__form-button-save">Да</button>
             </form>
         </div>
@@ -90,7 +90,7 @@
     <section class="pop-up pop-up_show_new-avatar-form">
         <div class="pop-up__container">
             <form class="pop-up__form" name="updateAvatar" novalidate>
-                <h2 class="pop-up__form-title">Обновить аватар</h2>
+                <h2 class="pop-up__form-title pop-up__form-title">Обновить аватар</h2>
                 <input class="pop-up__form-input pop-up__form-input_input_avatar-url" id="avatar-url-input"
                     name="avatar" type="url" placeholder="Ссылка на новый аватар" required>
                 <span class="pop-up__form-input-error pop-up__form-avatar-url-input-error"></span>

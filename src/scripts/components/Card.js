@@ -1,8 +1,9 @@
 export class Card {
-    constructor(cardData, cardTemplate, handleOpenImage) {
+    constructor(cardData, cardTemplate, handleOpenImage, openDeletePopup) {
         this._cardData = cardData;
         this._cardTemplate = cardTemplate;
         this._handleOpenImage = handleOpenImage;
+        this._openDeletePopup = openDeletePopup;
         this._liked = false;
         this._count = 0;
     }
@@ -23,19 +24,19 @@ export class Card {
     }
 
     _cardDelete() {
-        this._cardElement.remove();
+        this._openDeletePopup(this);
     }
 
     _cardLike() {
         this._cardLikeBtn.classList.toggle('card__like_active');
     }
 
-    _cardLikeCount(){
-        if(!this._liked){
+    _cardLikeCount() {
+        if (!this._liked) {
             this._count++;
             this._cardLikeNumbers.textContent = this._count;
             this._liked = true;
-        }else{
+        } else {
             this._count--;
             this._cardLikeNumbers.textContent = this._count;
             this._liked = false;
@@ -51,5 +52,9 @@ export class Card {
         this._cardImage.addEventListener('click', () => {
             this._handleOpenImage(this._cardData)
         })
+    }
+
+    removeCard() {
+        this._cardElement.remove();
     }
 }
