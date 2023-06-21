@@ -1,0 +1,8 @@
+.pop-up__container_open_submit{
+    background-color: #fff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}

@@ -17,8 +17,9 @@
     <main class="content">
 
         <section class="profile">
-
-            <img class="profile__avatar" src="<%=require('./images/avatar.svg')%>" alt="Аватар">
+            <button class="profile__avatar-btn">
+                <img class="profile__avatar" src="<%=require('./images/avatar.svg')%>" alt="Аватар">
+            </button>
             <div class="profile-info">
                 <div class="profile-info__container">
                     <h1 class="profile-info__name">Жак-Ив Кусто</h1>
@@ -37,7 +38,7 @@
 
     <section class="pop-up pop-up_show_edit-profile">
         <div class="pop-up__container">
-            <form class="pop-up__form" name="pop-up__form" novalidate>
+            <form class="pop-up__form" name="editProfile" novalidate>
                 <h2 class="pop-up__form-title">Редактировать профиль</h2>
                 <input class="pop-up__form-input pop-up__form-input_input_name" id='name-input' name="username"
                     type="text" required minlength="2" maxlength="40" placeholder="Укажите имя">
@@ -54,7 +55,7 @@
 
     <section class="pop-up pop-up_show_add-cards">
         <div class="pop-up__container">
-            <form class="pop-up__form" name="pop-up__form" novalidate>
+            <form class="pop-up__form" name="addCard" novalidate>
                 <h2 class="pop-up__form-title">Новое место</h2>
                 <input class="pop-up__form-input pop-up__form-input_input_place" id="place-input" name="title"
                     type="text" placeholder="Название" required minlength="2" maxlength="30">
@@ -76,11 +77,26 @@
         </div>
     </section>
 
-    <section class="pop-up pop-up_show_delete-submit">
-        <div class="pop-up__container">
-            <h2 class="pop-up_title">Вы уверенны?</h2>
+    <section class="pop-up pop-up_show_delete-submit pop-up_opened">
+        <div class="pop-up__container pop-up__container_open_submit">
+            <h2 class="pop-up__title">Вы уверенны?</h2>
             <button class="pop-up__button-close" type="button"></button>
-            <button class="pop-up__button-confirm">Да</button>
+            <form class="pop-up__form" name="deleteCard" novalidate>
+                <button class="pop-up__form-button-save">Да</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="pop-up pop-up_show_new-avatar-form">
+        <div class="pop-up__container">
+            <form class="pop-up__form" name="updateAvatar" novalidate>
+                <h2 class="pop-up__form-title">Обновить аватар</h2>
+                <input class="pop-up__form-input pop-up__form-input_input_avatar-url" id="avatar-url-input"
+                    name="avatar" type="url" placeholder="Ссылка на новый аватар" required>
+                <span class="pop-up__form-input-error pop-up__form-avatar-url-input-error"></span>
+                <button class="pop-up__form-button-save" type="submit">Сохранить</button>
+            </form>
+            <button class="pop-up__button-close" type="button"></button>
         </div>
     </section>
 
