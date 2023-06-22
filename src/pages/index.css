@@ -70,4 +70,4 @@
 @import url("../blocks/pop-up/_show/pop-up_show_delete-submit.css");
 @import url("../blocks/pop-up/__container/_open/pop-up__container_open_submit.css");
 
-@import url("../blocks/pop-up/__form-title-confirm/pop-up__form-title-confirm.css");
+@import url('../blocks/pop-up/__form-title/_type/pop-up__form-title_type_delete.css');
