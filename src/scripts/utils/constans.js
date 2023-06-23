@@ -3,7 +3,8 @@ const settings = {
     inputSelector: '.pop-up__form-input',
     buttonSelector: '.pop-up__form-button-save',
     inactiveButtonClass: 'pop-up__form-button-save_inactive',
-    inputErrorClass: 'pop-up__form-input_type_error'
+    inputErrorClass: 'pop-up__form-input_type_error',
+
 }
 
 const editButton = document.querySelector('.profile-info__edit-button');
@@ -19,7 +20,8 @@ const popUpAddCards = document.querySelector('.pop-up_show_add-cards');
 const popUpAddCardsForm = popUpAddCards.querySelector('.pop-up__form');
 const userInfoConfig = {
     profileNameSelector: '.profile-info__name',
-    profileProfessionSelector: '.profile-info__profession'
+    profileProfessionSelector: '.profile-info__profession',
+    profileAvatar : '.profile__avatar'
 };
 const popupConfirm = document.querySelector('.pop-up_show_delete-submit');
 const popupConfirmForm = popupConfirm.querySelector('.pop-up__form');
