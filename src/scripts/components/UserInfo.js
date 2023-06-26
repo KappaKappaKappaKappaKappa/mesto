@@ -9,9 +9,10 @@ export default class UserInfo {
         return { username: this._profileName.textContent, profession: this._profileProfession.textContent }
     }
 
-    setUserInfo({ username, profession, avatar }) {
+    setUserInfo({ username, profession, avatar, _id }) {
         this._profileAvatar.src = avatar;
         this._profileName.textContent = username;
         this._profileProfession.textContent = profession;
+        
     }
 }

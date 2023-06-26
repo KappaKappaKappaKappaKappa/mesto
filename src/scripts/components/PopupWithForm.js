@@ -18,6 +18,10 @@ export default class PopupWithForm extends Popup {
         return values;
     }
 
+    _renderLoading(){
+        this._saveBtn.textContent = `${this._saveBtn.textContent}...`
+    }
+
     setInputValues(dataUser) {
         this._inputList.forEach(input => {
             input.value = dataUser[input.name]
@@ -28,7 +32,7 @@ export default class PopupWithForm extends Popup {
         super.setEventListeners();
         this._form.addEventListener('submit', evt => {
             evt.preventDefault();
-            this._saveBtn.textContent = `${this._saveBtn.textContent}...`
+            this._renderLoading()
             this._submitFunction(this._getInputValues());
         })
     }

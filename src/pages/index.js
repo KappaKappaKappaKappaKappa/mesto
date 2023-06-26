@@ -43,22 +43,11 @@ const popupEditProfile = new PopupWithForm(editProfilePopupSelector, data => {
             popupEditProfile.close();
         })
         .catch((error => console.error(`Ошибка редактирования профиля${error}`)))
-        .finally(() => popupEditAvatar.setupDefaultText())
+        .finally(() => popupEditProfile.setupDefaultText())
 })
 popupEditProfile.setEventListeners();
 
-//Создание класса PopupWithForm для попапа добавления новых карточек
-const addCardPopup = new PopupWithForm(addCardPopupSelector, (data) => {
-    Promise.all([api.getInfo(), api.addCard(data)])
-        .then(([dataUser, dataCard]) => {
-            dataCard.myid = dataUser._id;
-            section.addItemPrepend(createNewCard(dataCard))
-            addCardPopup.close();
-        })
-        .catch((error) => console.error(`Ошибка при добавлении новой карточки ${error}`))
-        .finally(() => popupEditAvatar.setupDefaultText());
-})
-addCardPopup.setEventListeners();
+
 
 const popupEditAvatar = new PopupWithForm(popupAvatarSelector, data => {
     api.setNewAvatar(data)
@@ -149,10 +138,23 @@ const api = new Api({
     }
 })
 
+//Создание класса PopupWithForm для попапа добавления новых карточек
+const addCardPopup = new PopupWithForm(addCardPopupSelector, (data) => {
+    api.addCard(data)
+        .then((dataCard) => {
+            dataCard.myid = dataCard.owner._id;
+            section.addItemPrepend(createNewCard(dataCard))
+            addCardPopup.close();
+        })
+        .catch((error) => console.error(`Ошибка при добавлении новой карточки ${error}`))
+        .finally(() => addCardPopup.setupDefaultText());
+})
+addCardPopup.setEventListeners();
+
 Promise.all([api.getInfo(), api.getCards()])
     .then(([dataUser, dataCards]) => {
         dataCards.forEach(card => card.myid = dataUser._id);
         userInfo.setUserInfo({ username: dataUser.name, profession: dataUser.about, avatar: dataUser.avatar });
-        section.addCardFromArr(dataCards.reverse());
+        section.renderItems(dataCards.reverse());
     })
     .catch((error) => console.error(`Ошибка при начальной загрузке данных страницы${error}`))
